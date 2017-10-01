@@ -7,5 +7,3 @@ times 510-($-$$) db 0
 ; Magic bit sequences for identifying boot sector
 db 0x55
 db 0xAA
-
-
