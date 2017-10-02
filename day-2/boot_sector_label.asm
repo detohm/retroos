@@ -5,6 +5,7 @@ mov ah, 0x0E
 mov al, [test_func]
 int 0x10
 
+; label
 test_func:
     db "O"
 
