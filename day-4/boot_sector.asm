@@ -13,29 +13,14 @@ call FN_PRINT_STRING
 mov ah, 0x0e
 int 0x10
 
+; Test print Hex
+mov dx, 0x1c12
+call FN_PRINT_HEX
+
 jmp $
 
-
-; Function
-FN_PRINT_STRING:
-  pusha
-
-FN_PRINT_STRING_START:
-
-  mov al, [bx]
-  cmp al, 0
-  je FN_PRINT_STRING_DONE
-
-  mov ah, 0x0e
-  int 0x10
-
-  add bx, 1
-  jmp FN_PRINT_STRING_START
-
-FN_PRINT_STRING_DONE:
-  popa
-  ret
-
+%include "function_print_string.asm"
+%include "function_print_hex.asm"
 
 ; Data
 HELLO_MSG:
