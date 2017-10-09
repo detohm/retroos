@@ -1,19 +1,19 @@
 ; Function
-FN_PRINT_STRING:
+print_string:
   pusha
 
-FN_PRINT_STRING_START:
+print_string_start:
 
   mov al, [bx]
   cmp al, 0
-  je FN_PRINT_STRING_DONE
+  je print_string_done
 
   mov ah, 0x0e
   int 0x10
 
   add bx, 1
-  jmp FN_PRINT_STRING_START
+  jmp print_string_start
 
-FN_PRINT_STRING_DONE:
+print_string_done:
   popa
   ret

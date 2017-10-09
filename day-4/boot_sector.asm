@@ -4,7 +4,7 @@
 mov al, 'C'
 
 mov bx, HELLO_MSG
-call FN_PRINT_STRING
+call print_string
 
 ; Try to print 'C' which declared before calling the function,
 ; It will not print put the 'C' if it's manipulated in the function.
@@ -15,7 +15,7 @@ int 0x10
 
 ; Test print Hex
 mov dx, 0x1c12
-call FN_PRINT_HEX
+call print_hex
 
 jmp $
 
