@@ -15,19 +15,22 @@ disk_load:
   pop dx        ; restore dx
   cmp dh, al
   jne disk_error_2
+
   popa
   ret
 
 disk_error:
   mov bx, DISK_ERROR_MSG
   call print_string
-  mov dh, ah
+  call print_string_nl
+  mov dx, ax
   call print_hex
   jmp $
 
 disk_error_2:
   mov bx, DISK_ERROR_MSG_2
   call print_string
+  call print_string_nl
   jmp $
 
 ; vars
