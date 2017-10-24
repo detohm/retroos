@@ -1,6 +1,7 @@
 C_SOURCES = $(wildcard kernel/*.c drivers/*.c)
 HEADERS = $(wildcard kernel/*.h drivers/*.h)
 
+# Define all objects' transform
 OBJ = $(C_SOURCES:.c=.o)
 
 all: os-image
